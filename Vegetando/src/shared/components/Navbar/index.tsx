@@ -6,10 +6,10 @@ export default function Navbar() {
     <nav className="navbar">
       <ul className="navbar-menu">
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" title='Home'>Home</Link>
         </li>
         <li>
-          <Link to="/recipes">Recipes</Link>
+          <Link to="/recipes" title='Receitas'>Receitas</Link>
         </li>
       </ul>
     </nav>
