@@ -1,15 +1,10 @@
 import styled from 'styled-components';
 
-interface SearchFiltersProps {
-  searchTerm: string;
-  onSearchChange: (value: string) => void;
-}
-
-const FiltersContainer = styled.div`
+export const FiltersContainer = styled.div`
   margin-bottom: 32px;
 `;
 
-const SearchBox = styled.div`
+export const SearchBox = styled.div`
   position: relative;
   max-width: 600px;
   margin: 0 auto;
@@ -19,7 +14,7 @@ const SearchBox = styled.div`
   }
 `;
 
-const SearchIcon = styled.span`
+export const SearchIcon = styled.span`
   position: absolute;
   left: 16px;
   top: 50%;
@@ -29,7 +24,7 @@ const SearchIcon = styled.span`
   opacity: 0.5;
 `;
 
-const SearchInput = styled.input`
+export const SearchInput = styled.input`
   width: 100%;
   padding: 16px 48px 16px 48px;
   font-size: 16px;
@@ -55,7 +50,7 @@ const SearchInput = styled.input`
   }
 `;
 
-const ClearButton = styled.button`
+export const ClearButton = styled.button`
   position: absolute;
   right: 12px;
   top: 50%;
@@ -78,27 +73,3 @@ const ClearButton = styled.button`
     color: ${({ theme }) => theme.colors.textPrimary};
   }
 `;
-
-export default function SearchFilters({ searchTerm, onSearchChange }: SearchFiltersProps) {
-  return (
-    <FiltersContainer>
-      <SearchBox>
-        <SearchIcon>🔍</SearchIcon>
-        <SearchInput
-          type="text"
-          placeholder="Buscar por nome, ingrediente ou autor..."
-          value={searchTerm}
-          onChange={(e) => onSearchChange(e.target.value)}
-        />
-        {searchTerm && (
-          <ClearButton
-            onClick={() => onSearchChange('')}
-            title="Limpar busca"
-          >
-            ✕
-          </ClearButton>
-        )}
-      </SearchBox>
-    </FiltersContainer>
-  );
-}

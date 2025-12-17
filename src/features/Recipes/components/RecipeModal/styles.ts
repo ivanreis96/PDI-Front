@@ -1,12 +1,6 @@
 import styled from 'styled-components';
-import type { Receita } from '../../../shared/types/receita.types';
 
-interface RecipeModalProps {
-  receita: Receita;
-  onClose: () => void;
-}
-
-const ModalOverlay = styled.div`
+export const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -21,7 +15,7 @@ const ModalOverlay = styled.div`
   overflow-y: auto;
 `;
 
-const ModalContent = styled.div`
+export const ModalContent = styled.div`
   background: ${({ theme }) => theme.colors.bgPrimary};
   border-radius: 16px;
   max-width: 800px;
@@ -37,7 +31,7 @@ const ModalContent = styled.div`
   }
 `;
 
-const CloseButton = styled.button`
+export const CloseButton = styled.button`
   position: absolute;
   top: 16px;
   right: 16px;
@@ -61,7 +55,7 @@ const CloseButton = styled.button`
   }
 `;
 
-const ModalHeader = styled.div`
+export const ModalHeader = styled.div`
   display: flex;
   gap: 24px;
   padding: 32px;
@@ -73,11 +67,11 @@ const ModalHeader = styled.div`
   }
 `;
 
-const ModalImageContainer = styled.div`
+export const ModalImageContainer = styled.div`
   flex-shrink: 0;
 `;
 
-const PlaceholderImage = styled.div`
+export const PlaceholderImage = styled.div`
   width: 200px;
   height: 200px;
   background: ${({ theme }) => theme.colors.bgSecondary};
@@ -93,7 +87,7 @@ const PlaceholderImage = styled.div`
   }
 `;
 
-const ModalIcon = styled.span`
+export const ModalIcon = styled.span`
   font-size: 80px;
   opacity: 0.5;
 
@@ -102,14 +96,14 @@ const ModalIcon = styled.span`
   }
 `;
 
-const TitleSection = styled.div`
+export const TitleSection = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 8px;
 `;
 
-const ModalTitle = styled.h2`
+export const ModalTitle = styled.h2`
   font-size: 28px;
   color: ${({ theme }) => theme.colors.textPrimary};
   margin: 0;
@@ -120,7 +114,7 @@ const ModalTitle = styled.h2`
   }
 `;
 
-const ModalAuthor = styled.p`
+export const ModalAuthor = styled.p`
   color: ${({ theme }) => theme.colors.textSecondary};
   font-size: 16px;
   margin: 0;
@@ -130,13 +124,13 @@ const ModalAuthor = styled.p`
   }
 `;
 
-const SocialInfo = styled.p`
+export const SocialInfo = styled.p`
   color: ${({ theme }) => theme.colors.textSecondary};
   font-size: 14px;
   margin: 0;
 `;
 
-const StatsContainer = styled.div`
+export const StatsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
@@ -149,7 +143,7 @@ const StatsContainer = styled.div`
   }
 `;
 
-const StatItem = styled.div`
+export const StatItem = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
@@ -164,7 +158,7 @@ const StatItem = styled.div`
   }
 `;
 
-const StatIcon = styled.span`
+export const StatIcon = styled.span`
   font-size: 24px;
 
   @media (max-width: 768px) {
@@ -172,7 +166,7 @@ const StatIcon = styled.span`
   }
 `;
 
-const StatValue = styled.div`
+export const StatValue = styled.div`
   font-size: 20px;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.textPrimary};
@@ -182,12 +176,12 @@ const StatValue = styled.div`
   }
 `;
 
-const StatLabel = styled.div`
+export const StatLabel = styled.div`
   font-size: 12px;
   color: ${({ theme }) => theme.colors.textSecondary};
 `;
 
-const ModalBody = styled.div`
+export const ModalBody = styled.div`
   padding: 32px;
 
   @media (max-width: 768px) {
@@ -195,7 +189,7 @@ const ModalBody = styled.div`
   }
 `;
 
-const Section = styled.section`
+export const Section = styled.section`
   margin-bottom: 32px;
 
   &:last-child {
@@ -203,7 +197,7 @@ const Section = styled.section`
   }
 `;
 
-const SectionTitle = styled.h3`
+export const SectionTitle = styled.h3`
   font-size: 20px;
   color: ${({ theme }) => theme.colors.textPrimary};
   margin: 0 0 16px 0;
@@ -213,7 +207,7 @@ const SectionTitle = styled.h3`
   gap: 8px;
 `;
 
-const IngredientsList = styled.ul`
+export const IngredientsList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
@@ -232,17 +226,17 @@ const IngredientsList = styled.ul`
   }
 `;
 
-const IngredientName = styled.span`
+export const IngredientName = styled.span`
   color: ${({ theme }) => theme.colors.textPrimary};
   font-weight: 500;
 `;
 
-const IngredientQuantity = styled.span`
+export const IngredientQuantity = styled.span`
   color: ${({ theme }) => theme.colors.accentPrimary};
   font-weight: 600;
 `;
 
-const Instructions = styled.div`
+export const Instructions = styled.div`
   padding: 20px;
   background: ${({ theme }) => theme.colors.bgSecondary};
   border-radius: 12px;
@@ -251,86 +245,3 @@ const Instructions = styled.div`
   line-height: 1.8;
   white-space: pre-line;
 `;
-
-export default function RecipeModal({ receita, onClose }: RecipeModalProps) {
-  return (
-    <ModalOverlay onClick={onClose}>
-      <ModalContent onClick={(e) => e.stopPropagation()}>
-        <CloseButton onClick={onClose}>
-          ✕
-        </CloseButton>
-
-        <ModalHeader>
-          <ModalImageContainer>
-            <PlaceholderImage>
-              <ModalIcon>🍽️</ModalIcon>
-            </PlaceholderImage>
-          </ModalImageContainer>
-          
-          <TitleSection>
-            <ModalTitle>{receita.nome}</ModalTitle>
-            <ModalAuthor>
-              por <strong>@{receita.usuario.apelido}</strong>
-            </ModalAuthor>
-            
-            {receita.usuario.instagram && (
-              <SocialInfo>📷 {receita.usuario.instagram}</SocialInfo>
-            )}
-            {receita.usuario.tiktok && (
-              <SocialInfo>🎵 {receita.usuario.tiktok}</SocialInfo>
-            )}
-          </TitleSection>
-        </ModalHeader>
-
-        {receita.publicacao && (
-          <StatsContainer>
-            <StatItem>
-              <StatIcon>⭐</StatIcon>
-              <div>
-                <StatValue>{receita.publicacao.notaMedia.toFixed(1)}</StatValue>
-                <StatLabel>{receita.publicacao.quantidadeVotos} votos</StatLabel>
-              </div>
-            </StatItem>
-            <StatItem>
-              <StatIcon>😋</StatIcon>
-              <div>
-                <StatValue>{receita.publicacao.deliciosos}</StatValue>
-                <StatLabel>deliciosos</StatLabel>
-              </div>
-            </StatItem>
-            <StatItem>
-              <StatIcon>📅</StatIcon>
-              <div>
-                <StatValue>
-                  {new Date(receita.publicacao.dataPublicacao).toLocaleDateString('pt-BR')}
-                </StatValue>
-                <StatLabel>publicado</StatLabel>
-              </div>
-            </StatItem>
-          </StatsContainer>
-        )}
-
-        <ModalBody>
-          <Section>
-            <SectionTitle>📝 Ingredientes</SectionTitle>
-            <IngredientsList>
-              {receita.ingredientes.map((ing) => (
-                <li key={ing.id}>
-                  <IngredientName>{ing.nome}</IngredientName>
-                  <IngredientQuantity>{ing.quantidade}</IngredientQuantity>
-                </li>
-              ))}
-            </IngredientsList>
-          </Section>
-
-          <Section>
-            <SectionTitle>👨‍🍳 Modo de Preparo</SectionTitle>
-            <Instructions>
-              {receita.modoPreparo}
-            </Instructions>
-          </Section>
-        </ModalBody>
-      </ModalContent>
-    </ModalOverlay>
-  );
-}

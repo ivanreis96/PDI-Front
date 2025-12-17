@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 export type Theme = 'light' | 'dark';
 
@@ -25,7 +25,7 @@ const themeSlice = createSlice({
       localStorage.setItem('theme', state.mode);
       document.documentElement.setAttribute('data-theme', state.mode);
     },
-    setTheme: (state, action: PayloadAction<Theme>) => {
+    setTheme: (state, action: { payload: Theme }) => {
       state.mode = action.payload;
       localStorage.setItem('theme', state.mode);
       document.documentElement.setAttribute('data-theme', state.mode);
