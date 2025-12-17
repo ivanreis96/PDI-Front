@@ -1,7 +1,82 @@
+/* ========== VARIÁVEIS DE TEMA ========== */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
+  /* Tema Claro (padrão) */
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f8f9fa;
+  --bg-hover: #ecf0f1;
+  
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --text-tertiary: #555;
+  
+  --border-color: #e9ecef;
+  --border-hover: #dee2e6;
+  
+  --shadow-sm: rgba(0, 0, 0, 0.1);
+  --shadow-md: rgba(0, 0, 0, 0.15);
+  --shadow-lg: rgba(0, 0, 0, 0.2);
+  
+  --accent-primary: #667eea;
+  --accent-secondary: #764ba2;
+  --accent-hover: #5568d3;
+  
+  --navbar-bg: #2c3e50;
+  --navbar-hover: #34495e;
+  --navbar-active: #3498db;
+  
+  --card-bg: #ffffff;
+  --modal-overlay: rgba(0, 0, 0, 0.7);
+  
+  --error-bg: #fff5f5;
+  --error-border: #ff6b6b;
+  --error-text: #c92a2a;
+  
+  --input-bg: #ffffff;
+  --input-border: #e9ecef;
+  --input-focus: #667eea;
+}
+
+/* Tema Escuro */
+[data-theme='dark'] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #242424;
+  --bg-hover: #3a3a3a;
+  
+  --text-primary: #e9ecef;
+  --text-secondary: #adb5bd;
+  --text-tertiary: #ced4da;
+  
+  --border-color: #404040;
+  --border-hover: #4a4a4a;
+  
+  --shadow-sm: rgba(0, 0, 0, 0.3);
+  --shadow-md: rgba(0, 0, 0, 0.4);
+  --shadow-lg: rgba(0, 0, 0, 0.5);
+  
+  --accent-primary: #7c8eef;
+  --accent-secondary: #8b5fc7;
+  --accent-hover: #8a9ef5;
+  
+  --navbar-bg: #1a1a1a;
+  --navbar-hover: #2d2d2d;
+  --navbar-active: #4a90e2;
+  
+  --card-bg: #2d2d2d;
+  --modal-overlay: rgba(0, 0, 0, 0.85);
+  
+  --error-bg: #2d1f1f;
+  --error-border: #d65d5d;
+  --error-text: #ff8787;
+  
+  --input-bg: #2d2d2d;
+  --input-border: #404040;
+  --input-focus: #7c8eef;
 }
 
 * {
@@ -13,8 +88,9 @@ body {
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #f5f5f5;
-  color: #2c3e50;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1 {
